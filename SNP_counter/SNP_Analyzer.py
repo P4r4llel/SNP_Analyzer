@@ -17,7 +17,8 @@ End of my modules
 """
 # TODO: Tidy it up
 # TODO: Make an argument parser for Power Shell, CMD
-input_file = "rasmus_rc.fasta"
+# WTF
+input_file = "fasta.fasta"
 try:
     input_file
 except NameError:
@@ -146,10 +147,11 @@ def SNP_Registrator(seqA, seqB):
     # Asessing local mutation rate
     Local_Report["Mutation_Rate"] = (SNP_count / len(seqA)) * 100
     Local_Report["SeqA_Length"] = len(seqA)
-    if Local_Report["SeqA_Nucleotide"][-1] == "-" and Local_Report["SeqB_Nucleotide"][-1] == "-":
-        _Local_Report_Popper(Local_Report, -1)
-    if Local_Report["SeqA_Nucleotide"][0] == "-" and Local_Report["SeqB_Nucleotide"][0] == "-":
-        _Local_Report_Popper(Local_Report, 0)
+    if Local_Report["SeqA_Nucleotide"] != []:
+        if Local_Report["SeqA_Nucleotide"][-1] == "-" and Local_Report["SeqB_Nucleotide"][-1] == "-":
+            _Local_Report_Popper(Local_Report, -1)
+        if Local_Report["SeqA_Nucleotide"][0] == "-" and Local_Report["SeqB_Nucleotide"][0] == "-":
+            _Local_Report_Popper(Local_Report, 0)
     return Local_Report
 
 # SNP Type Data recording happens in these functions
