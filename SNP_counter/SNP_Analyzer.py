@@ -1,3 +1,7 @@
+"""
+SNP ANALYZER
+"""
+
 import operator
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
